@@ -62,6 +62,7 @@
             
             // ...
         }
+    }
 ```
 ### ViewModels to fetch and return data from the endpoints
 ```swift
