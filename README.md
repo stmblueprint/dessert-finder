@@ -14,7 +14,7 @@
 
 <hr/>
 
-## Approach(MVVM)
+## Architecture(MVVM)
 ### Models to store data from the API endpoint to be displayed
 ```swift
 
