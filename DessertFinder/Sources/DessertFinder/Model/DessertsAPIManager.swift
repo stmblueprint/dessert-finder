@@ -107,3 +107,57 @@ enum DessertsAPIError: Error {
     case badGateway
     case nonHttpError
 }
+
+
+//struct DessertsDetails: Codable {
+//    let idMeal: String
+//    let strMeal: String
+//    let strMealThumb: String
+//    let strInstructions: String
+//    let ingredients: [(ingredient: String, measure: String)]
+//
+//    enum CodingKeys: String, CodingKey {
+//        case idMeal, strMeal, strMealThumb, strInstructions
+//        case strIngredient1, strMeasure1
+//        case strIngredient2, strMeasure2
+//        // ... repeat for other ingredients and measures
+//    }
+//
+//    init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//
+//        idMeal = try container.decode(String.self, forKey: .idMeal)
+//        strMeal = try container.decode(String.self, forKey: .strMeal)
+//        strMealThumb = try container.decode(String.self, forKey: .strMealThumb)
+//        strInstructions = try container.decode(String.self, forKey: .strInstructions)
+//
+//        var ingredients: [(ingredient: String, measure: String)] = []
+//
+//        for i in 1...20 {
+//            let ingredientKey = CodingKeys(stringValue: "strIngredient\(i)")!
+//            let measureKey = CodingKeys(stringValue: "strMeasure\(i)")!
+//
+//            if let ingredient = try container.decodeIfPresent(String.self, forKey: ingredientKey),
+//               let measure = try container.decodeIfPresent(String.self, forKey: measureKey),
+//               !ingredient.isEmpty {
+//                ingredients.append((ingredient, measure))
+//            }
+//        }
+//
+//        self.ingredients = ingredients
+//    }
+//
+//    func encode(to encoder: Encoder) throws {
+//        var container = encoder.container(keyedBy: CodingKeys.self)
+//
+//        try container.encode(idMeal, forKey: .idMeal)
+//        try container.encode(strMeal, forKey: .strMeal)
+//        try container.encode(strMealThumb, forKey: .strMealThumb)
+//        try container.encode(strInstructions, forKey: .strInstructions)
+//
+//        for (index, ingredient) in ingredients.enumerated() {
+//            try container.encode(ingredient.ingredient, forKey: CodingKeys(stringValue: "strIngredient\(index + 1)")!)
+//            try container.encode(ingredient.measure, forKey: CodingKeys(stringValue: "strMeasure\(index + 1)")!)
+//        }
+//    }
+//}

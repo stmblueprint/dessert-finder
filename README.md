@@ -63,19 +63,20 @@
             // ...
         }
 ```
-### ViewModels to fetch and return data from the endpoints
+### ViewModel to fetch and return data from the endpoints
 ```swift
-   func fetchDessertsCategory() async throws -> DessertsAPIModel {
-        let dessertsCategoryEndpoint = "https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert"
+   class NetworkingManager {
+    static let shared = NetworkingManager()
+
+    private init() {}
+
+    func fetchData<T: Decodable>(from endpoint: String) async throws -> T {
+        guard let url = URL(string: endpoint) else {
+            throw NetworkingError.invalidURL
+        }
         
-        // ...
-    }
-    
-    func fetchDessertDetails(_ id: String) async throws -> DessertsDetailsAPIModel {
-        let dessertsDetailsEndpoint = "https://themealdb.com/api/json/v1/1/lookup.php?i=\(id)"
-        
-        // ...
-    }
+    // ...
+
     
 ```
 
