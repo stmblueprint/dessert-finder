@@ -1,4 +1,3 @@
-# iOS Coding Challenge
 
 ## Language & API
 ### Swift | SwiftUI
