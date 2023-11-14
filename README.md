@@ -1,4 +1,4 @@
-# Fetch - iOS Coding Challenge
+# iOS Coding Challenge
 
 ## Language & API
 ### Swift | SwiftUI
